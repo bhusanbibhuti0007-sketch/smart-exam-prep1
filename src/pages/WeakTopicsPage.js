@@ -17,7 +17,7 @@ export default function WeakTopicsPage() {
       setWeakTopics(data.weakTopics || []);
       setLoading(false);
     });
-  }, []);
+  }, [user.username]);
 
   const sorted = [...weakTopics].sort((a, b) => a.score - b.score);
   const getColor = (score) => {
