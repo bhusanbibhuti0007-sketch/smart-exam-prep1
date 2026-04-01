@@ -63,6 +63,7 @@ export default function QuizPage() {
     if (currentQ + 1 >= questions.length) {
       // Quiz done
       const finalScore = score + (selected === questions[currentQ]?.answer ? 0 : 0);
+      console.log("Final Score:", finalScore, "out of", questions.length);
       setStep("result");
       try {
         await saveQuizResult(user.username, selectedTopic, score, questions.length);

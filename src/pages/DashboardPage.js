@@ -20,7 +20,7 @@ export default function DashboardPage() {
       updateUser(data);
       setLoading(false);
     }).catch(() => setLoading(false));
-  }, []);
+  }, [updateUser, user.username]);
 
   const totalSessions   = profile?.sessions?.length || 0;
   const topics          = profile?.topics || [];
