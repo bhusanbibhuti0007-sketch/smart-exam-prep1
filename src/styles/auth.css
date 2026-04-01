@@ -1,0 +1,103 @@
+/* src/styles/auth.css */
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 60% 40%, rgba(108,99,255,0.15) 0%, transparent 60%),
+              var(--bg-main);
+  padding: 1rem;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 420px;
+  animation: fadeUp 0.5s ease;
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.auth-logo h1 {
+  font-size: 1.9rem;
+  background: linear-gradient(135deg, var(--accent-light), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.auth-logo p { color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.4rem; }
+
+.auth-form { display: flex; flex-direction: column; gap: 1rem; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; }
+.form-group input {
+  background: var(--bg-card2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 0.8rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus { border-color: var(--accent); }
+.form-group input::placeholder { color: var(--text-secondary); }
+
+/* Password strength bar */
+.password-strength { margin-top: 0.4rem; }
+.strength-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--bg-card2);
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+.strength-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s, background 0.3s;
+}
+.strength-label { font-size: 0.78rem; }
+.strength-hints { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.hint {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  background: var(--bg-card2);
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.hint.pass { background: rgba(46,204,113,0.15); color: var(--success); }
+
+.auth-switch {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.auth-switch button {
+  background: none;
+  color: var(--accent-light);
+  text-decoration: underline;
+  padding: 0;
+}
+
+.error-msg {
+  background: rgba(231,76,60,0.12);
+  border: 1px solid rgba(231,76,60,0.3);
+  color: #ff6b6b;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+}
+
+/* ══════════════════════════════════════════
+   AUTH MOBILE RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .auth-box { padding: 1.25rem; }
+  .auth-logo h1 { font-size: 1.5rem; }
+  .strength-hints { gap: 0.3rem; }
+  .hint { font-size: 0.68rem; }
+}

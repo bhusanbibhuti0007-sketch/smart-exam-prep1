@@ -1,0 +1,147 @@
+/* src/styles/quiz.css */
+
+/* ── Syllabus Upload ── */
+.upload-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--bg-card);
+}
+.upload-zone:hover, .upload-zone.drag-active {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+.upload-zone .upload-icon { font-size: 3rem; margin-bottom: 1rem; }
+.upload-zone h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.upload-zone p { color: var(--text-secondary); font-size: 0.88rem; }
+
+.syllabus-textarea {
+  width: 100%;
+  min-height: 180px;
+  background: var(--bg-card2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 1rem;
+  resize: vertical;
+  outline: none;
+  margin-top: 1rem;
+  transition: border-color 0.2s;
+}
+.syllabus-textarea:focus { border-color: var(--accent); }
+
+.topics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.topic-chip {
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  color: var(--accent-light);
+  padding: 0.35rem 0.9rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.topic-chip:hover { background: var(--accent); color: #fff; }
+.topic-chip.selected { background: var(--accent); color: #fff; }
+
+/* ── Quiz Page ── */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.quiz-progress-bar {
+  height: 6px;
+  background: var(--bg-card2);
+  border-radius: 3px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.question-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+.question-number { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem; }
+.question-text { font-size: 1.15rem; font-weight: 600; line-height: 1.5; margin-bottom: 1.5rem; }
+
+.options-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+.option-btn {
+  background: var(--bg-card2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 0.9rem 1.25rem;
+  text-align: left;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  width: 100%;
+}
+.option-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-glow); }
+.option-btn.selected { border-color: var(--accent); background: var(--accent-glow); color: var(--accent-light); }
+.option-btn.correct  { border-color: var(--success); background: rgba(46,204,113,0.12); color: var(--success); }
+.option-btn.wrong    { border-color: var(--danger);  background: rgba(231,76,60,0.12);  color: var(--danger);  }
+
+.explanation-box {
+  background: rgba(108,99,255,0.08);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  animation: fadeUp 0.3s ease;
+}
+
+/* ── Results screen ── */
+.result-screen {
+  text-align: center;
+  padding: 3rem 1rem;
+  animation: fadeUp 0.5s ease;
+}
+.result-screen .score-circle {
+  width: 140px; height: 140px;
+  margin: 0 auto 1.5rem;
+}
+.result-screen h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+.result-screen p { color: var(--text-secondary); margin-bottom: 2rem; }
+
+/* ══════════════════════════════════════════
+   QUIZ MOBILE RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .upload-zone { padding: 2rem 1rem; }
+  .upload-zone .upload-icon { font-size: 2rem; }
+
+  .question-card { padding: 1.25rem; }
+  .question-text { font-size: 1rem; }
+  .option-btn { padding: 0.75rem 1rem; font-size: 0.9rem; }
+
+  .quiz-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+  .result-screen { padding: 2rem 0.5rem; }
+  .result-screen h2 { font-size: 1.5rem; }
+  .result-screen .score-circle { width: 110px; height: 110px; }
+
+  .topics-list { gap: 0.4rem; }
+  .topic-chip { font-size: 0.8rem; padding: 0.3rem 0.7rem; }
+}
