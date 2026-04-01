@@ -1,5 +1,5 @@
 // src/pages/StudyPlanPage.js
-// AI generates a personalized study plan based on topics + weak areas
+// AI generates a personalized study plan based on topi+ weak areas
 
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
