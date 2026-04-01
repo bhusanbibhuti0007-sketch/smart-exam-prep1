@@ -2,15 +2,11 @@
 // All Firebase read/write functions used across the app
 
 import {
-  collection,
   doc,
   setDoc,
   getDoc,
   updateDoc,
   arrayUnion,
-  query,
-  where,
-  getDocs,
   serverTimestamp
 } from "firebase/firestore";
 import { db } from "./firebaseConfig";
